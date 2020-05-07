@@ -1,3 +1,5 @@
+package ChocolateBoiler;
+
 public class ChocolateBoiler {
     private boolean empty;
     private boolean boiled;
@@ -5,6 +7,10 @@ public class ChocolateBoiler {
     public ChocolateBoiler() {
         empty = true;
         boiled = false;
+    }
+
+    public void print() {
+        System.out.println("Empty = " + empty + ". Boiled = " + boiled);
     }
 
     public void fill(){
@@ -15,14 +21,14 @@ public class ChocolateBoiler {
     }
 
     public void drain(){
-        if(isEmpty() && isBoiled()){
+        if(!isEmpty() && isBoiled()){
             //drain the boiled milk and chocolate
             empty = true;
         }
     }
 
     public void boil(){
-        if(!isEmpty() && isBoiled()){
+        if(!isEmpty() && !isBoiled()){
             //bring the contents to a boil
             boiled = true;
         }
